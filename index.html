@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人详细信息</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<style type="text/css">
+    *{
+    margin: 0;padding: 0;
+    list-style:none;
+    overflow: auto;
+}
+a:link,a:visited{
+    text-decoration: none;
+    color:#fff;
+    font-size: 16px;
+}
+.box1{
+    width: 980px;
+    height: 70px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#canvas1 {
+    display: block;
+    cursor: pointer;
+  }
+.box2{
+    width: 100%;
+    height: 48px;
+    background: #adbef5;
+}
+.list{
+    width: 980px;
+    margin: 0 auto;
+}
+.box2 li{
+    float: left;
+}
+a{
+    display: inline-block;
+    height: 48px;
+    padding: 0 50px;
+    line-height: 48px;
+}
+.core{
+    background: #bfdbf5;
+}
+a:hover{
+    background: #bfdbf5;
+}
+.box3{
+    margin: 0 auto;
+    width: 980px;
+    height: 380px;
+    border: 1px solid #000;
+}
+
+#content{
+    width: 830px;
+    height: 934px;
+    margin: 0 auto;
+    padding-left: 150px;
+   
+} 
+.h2{
+    width: 454px;
+    height: 80px;
+    font-size: 20px;
+    font-weight: 100;
+    color: #adbef5;
+    line-height: 80px;
+    margin: 0 auto;
+}
+h3{
+    width: 444px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: 100;
+    color: #adbef5;
+    line-height: 45px;
+    border-bottom: 1px solid #adbef5;
+    margin: 0 auto;
+}
+td{
+    height: 50px;
+    color: #adbef5;
+    size: 30px;
+}
+.left{
+    width: 120px;
+    text-align: right;
+    font-size: 20px;
+}
+.right{
+    width: 200px;
+    height: 28px;
+    border: 1px solid#adbef5;
+    border-radius: 60px;
+
+}
+input{vertical-align: middle;}
+select{
+    width: 171px;
+    border: 1px solid #adbef5;
+}
+textarea{
+    width: 380px;
+    border: 1px solid #adbef5;
+    resize: none;
+    font-size: 20px;
+    color: #aaa;
+    padding: 20px;
+    border-radius: 60px;
+
+}
+#foot a:link,#foot a:visited{
+    text-decoration: none;
+    color:#fff;
+    font-size: 16px;
+    background: #adbef5;
+}
+#foot a:hover{
+    background: #bfdbf5;
+}
+.select{
+    height: 30px;
+    border-radius: 60px;
+}
+.bg-qi {
+        width: 100%;
+        background-color: rgb(78, 76, 76);
+        background-image: linear-gradient(45deg, rgba(8, 0, 8, 0.973) 25%, transparent 0, transparent 75%, rgba(8, 0, 8, 0.973) 0),
+            linear-gradient(45deg, rgba(8, 0, 8, 0.973) 25%, transparent 0, transparent 75%, rgba(8, 0, 8, 0.973) 0);
+        background-position: 0 0, 20px 20px;
+        background-size: 40px 40px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+    }
+.h1{
+    color: #fff;
+}
+
+
+
+</style>
+<body>
+<div class="bg-qi black-theme">
+    <div class="box1">
+        <h1 class="h1">牛马寝室管理系统-个人信息</h1>
+    </div>
+    <div class="box2">
+        <ul class="list">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">学籍</a></li>
+            <li><a href="#">相关</a></li>
+            <li><a href="#">注意</a></li>
+            <li><a href="#">更多</a></li>
+            <li class="core"><a href="#">详细信息</a></li>
+        </ul>
+    </div>
+    <div class="box3">
+        <canvas></canvas>
+    </div>
+    <div class="box4">
+        <h2 class="h2">信息</h2>
+        <form action="#" method="POST" class="title">
+            <h3>你的个人信息：</h3>
+            <table id="content">
+                <tr>
+                    <td class="left"></td>
+                    <td>
+                        <label for="one"><input type="radio" name="sex">E-Mail注册</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="two"><input type="radio" name="sex">手机号码注册</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">邮箱：</td>
+                    <td><input type="text" class="right" value="26******84@qq.com"></td>
+                </tr>
+                <tr>
+                    <td class="left">注册手机：</td>
+                    <td><input type="text" class="right" value="187******70"></td>
+                </tr>
+                <tr>
+                    <td class="left">登录密码：</td>
+                    <td><input type="password" class="right" maxlength="8" value="*********"></td>
+                </tr>
+                <tr>
+                    <td class="left">姓名:</td>
+                    <td><input type="text" class="right" value="某某牛马"></td>
+                </tr>
+            </table>
+            <h3>你的个人信息：</h3>
+            <table id="content">
+                <tr>
+                    <td class="left">性别：</td>
+                    <td>
+                        <label for="boy"><input type="radio" name="sex">男</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="girl"><input type="radio" name="sex">女</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">学历：</td>
+                    <td>
+                        <select class="select">
+                            <option>专科/本科</option>
+                            <option>中职/高中</option>
+                            <option>幼儿园</option>
+                            <option>硕士研究生</option>
+                            <option>博士研究生</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">所在城市：</td>
+                    <td>
+                        <select class="select">
+                            <option>-请选择-</option>
+                            <option selected="selected">昆明</option>
+                            <option>上海</option>
+                            <option>广州</option>
+                            <option>深圳</option>
+                            <option>成都</option>
+                            <option>长沙</option>
+                            <option>杭州</option>
+                            <option>南京</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">兴趣爱好：</td>
+                    <td>
+                        <input type="checkbox">足球&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox">篮球&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox">游泳&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox">唱歌&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox">跑步&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox">瑜伽
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">自我介绍：</td>
+                    <td>
+                        <textarea cols="60" rows="8" class="text">本人为昆明理工大学一名大一学生。专业为计算机科学与技术，爱好很多......</textarea>
+                    </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td id="foot"><a href="#">提交</a></td>
+                </tr>
+                
+            </table>
+        </form>
+    </div>
+</div>    
+<script>
+    var canvas = document.querySelector("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var ctx = canvas.getContext("2d");
+var TAU = 2 * Math.PI;
+times = [];
+
+function loop() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+update();
+draw();
+requestAnimationFrame(loop);
+}
+
+function Ball(startX, startY, startVelX, startVelY) {
+this.x = startX || Math.random() * canvas.width;
+this.y = startY || Math.random() * canvas.height;
+this.vel = {
+    x: startVelX || Math.random() * 2 - 1,
+    y: startVelY || Math.random() * 2 - 1
+};
+this.update = function(canvas) {
+    if (this.x > canvas.width + 50 || this.x < -50) {
+        this.vel.x = -this.vel.x;
+    }
+    if (this.y > canvas.height + 50 || this.y < -50) {
+        this.vel.y = -this.vel.y;
+    }
+    this.x += this.vel.x;
+    this.y += this.vel.y;
+};
+this.draw = function(ctx, can) {
+    ctx.beginPath();
+    ctx.globalAlpha = .4;
+    ctx.fillStyle = '#448fda';
+    ctx.arc((0.5 + this.x) | 0, (0.5 + this.y) | 0, 3, 0, TAU, false);
+    ctx.fill();
+}
+}
+var balls = [];
+for (var i = 0; i < canvas.width * canvas.height / (65 * 65); i++) {
+balls.push(new Ball(Math.random() * canvas.width, Math.random() * canvas.height));
+}
+var lastTime = Date.now();
+
+function update() {
+var diff = Date.now() - lastTime;
+for (var frame = 0; frame * 16.6667 < diff; frame++) {
+    for (var index = 0; index < balls.length; index++) {
+        balls[index].update(canvas);
+    }
+}
+lastTime = Date.now();
+}
+var mouseX = -1e9,
+mouseY = -1e9;
+document.addEventListener('mousemove', function(event) {
+mouseX = event.clientX;
+mouseY = event.clientY;
+});
+
+function distMouse(ball) {
+return Math.hypot(ball.x - mouseX, ball.y - mouseY);
+}
+
+function draw() {
+ctx.globalAlpha = 1;
+ctx.fillStyle = '#fff';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+for (var index = 0; index < balls.length; index++) {
+    var ball = balls[index];
+    ball.draw(ctx, canvas);
+    ctx.beginPath();
+    for (var index2 = balls.length - 1; index2 > index; index2 += -1) {
+        var ball2 = balls[index2];
+        var dist = Math.hypot(ball.x - ball2.x, ball.y - ball2.y);
+        if (dist < 100) {
+            ctx.strokeStyle = "#448fda";
+            ctx.globalAlpha = 1 - (dist > 100 ? .8 : dist / 150);
+            ctx.lineWidth = "2px";
+            ctx.moveTo((0.5 + ball.x) | 0, (0.5 + ball.y) | 0);
+            ctx.lineTo((0.5 + ball2.x) | 0, (0.5 + ball2.y) | 0);
+        }
+    }
+    ctx.stroke();
+}
+}
+loop();
+
+
+function change(myid,mode){
+document.getElementById(myid).style.display=mode;
+if(mode=='block'){
+document.getElementById(myid).style.border="1px solid #eee";
+document.getElementById(myid).style.borderTop="none";
+
+document.getElementById(myid).parentNode.style.backgroundColor="#fff";
+document.getElementById(myid).parentNode.style.border="1px solid #eee";
+document.getElementById(myid).parentNode.style.borderBottom="none";
+}
+else{
+    document.getElementById(myid).parentNode.style.backgroundColor="";
+    document.getElementById(myid).parentNode.style.border="";
+}
+}
+function Scroll(panelId, scrollBarId, scrollBtnId, step){
+    var panel = document.getElementById(panelId);
+    var scrollBar = document.getElementById(scrollBarId);
+    var scrollBtn = document.getElementById(scrollBtnId);
+    var scrollBarDownY = 0, scrollTop = 0.0, lastScrollTop = 0, isSlither = false, distance = 0, a = 0.0;
+    var val1 = null;
+    var wnd = window, doc = document;
+
+    
+    scrollBar.style.height = panel.offsetHeight+"px";
+
+    function slither()
+    {
+        if(val1 == null){
+            val1 = setInterval(function(){
+                if(isSlither) {
+                    isSlither = false;
+                    distance = scrollTop - lastScrollTop;
+                    a =  distance / 30;
+                    lastScrollTop = scrollTop;
+                }
+
+                if(distance != 0)
+                {
+                    scrollTop += distance / 3.0;
+                    panel.scrollTop = scrollTop;
+                    if(Math.abs(panel.scrollTop - scrollTop) > 0)
+                        lastScrollTop = scrollTop = panel.scrollTop;
+                    distance -= a;
+                    if(Math.abs(distance) < Math.abs(a))
+                        distance = a = 0;
+                }
+                else
+                {
+                    clearInterval(val1);
+                    val1 = null;
+                }
+            }, 30);
+        }
+    }
+
+
+    var setBar = function(){
+        var scan = panel.getBoundingClientRect().height / panel.scrollHeight;
+        if(scan >= 1) {
+            scrollBtn.style.display = "none"
+        }
+        else{
+            scrollBtn.style.display = "block"
+            scrollBtn.style.height = (scan * 100)+"%";
+            scrollBtn.style.top = (panel.scrollTop / panel.scrollHeight * 100)+"%";
+        }
+    }
+    setTimeout(function(){setBar();}, 1000);
+
+    panel.onscroll = function(){
+        setBar();
+    }
+
+    var mouseMove = function(e)
+    {
+        isSlither = true;
+        if(scrollBarDownY > 0)
+            lastScrollTop = scrollTop = panel.scrollTop = (e.pageY-scrollBar.getBoundingClientRect().top - scrollBarDownY) / panel.getBoundingClientRect().height * panel.scrollHeight;
+        wnd.getSelection ? wnd.getSelection().removeAllRanges() : doc.selection.empty(); //防止拖动时选中内容
+    }
+
+    doc.onmouseup = function(){
+        scrollBarDownY = 0;
+        doc.onmousemove = null;
+    }
+
+    scrollBtn.onmousedown = function(e) {
+        scrollBarDownY = e.pageY - scrollBtn.getBoundingClientRect().top;
+        doc.onmousemove = mouseMove;
+        distance = 0;
+    }
+
+    scrollBar.onmousedown = function(e)
+    {
+        if(e.pageY < scrollBtn.getBoundingClientRect().top || e.pageY > scrollBtn.getBoundingClientRect().bottom) {
+            scrollBarDownY = 1;
+            distance = 0;
+            lastScrollTop = scrollTop = panel.scrollTop = (e.pageY - scrollBar.getBoundingClientRect().top) / panel.getBoundingClientRect().height * panel.scrollHeight;
+        }
+    }
+
+    scrollBar.onmousewheel = panel.onmousewheel = function(e){
+        if (e.wheelDelta) { 
+            isSlither = true;
+            slither();
+            if (e.wheelDelta > 0) { 
+                panel.scrollTop -= step;
+                scrollTop -= step;
+            }
+            if (e.wheelDelta < 0) { 
+                panel.scrollTop += step;
+                scrollTop += step;
+            }
+        } else if (e.detail) { 
+            isSlither = true;
+            slither();
+            if (e.detail> 0) { 
+                panel.scrollTop  -= step;
+                scrollTop -= step;
+            }
+            if (e.detail< 0) { 
+                panel.scrollTop  += step;
+                scrollTop += step;
+            }
+        }
+    }
+}
+Scroll("div2", "scroll-bar", "scroll-btn", 5);
+
+</script>
+</body>
+</html>
